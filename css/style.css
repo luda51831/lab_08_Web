@@ -1,0 +1,152 @@
+/* Скидання стилів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #165D31;
+    color: white;
+  border-radius:5px ;
+}
+
+.header .logo img {
+    width: 55px;
+    height: 50px;
+}
+
+.header .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.header .user-icon {
+    width: 40px;
+    height: 43px;
+    margin-right: 10px;
+}
+
+.header .user-name {
+    font-size: 18px;
+    font-weight: bold;
+  margin-right: 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.sidebar {
+    width: 300px;
+    text-align: center;
+    background-color: #fff;
+  margin-left: -140px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.sidebar ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.sidebar ul li img {
+    width: 24px;  /* Початковий розмір */
+    height: 24px;
+    transition: all 0.3s ease-in-out; /* Плавна зміна розміру */
+}
+
+/* Робимо меню адаптивним */
+@media (max-width: 768px) {
+    .sidebar ul li img {
+        width: 20px;  /* Менший розмір для вузьких екранів */
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar ul li img {
+        width: 16px;  /* Ще менший розмір для мобільних пристроїв */
+        height: 16px;
+    }
+}
+.main-content {
+    flex: 1;
+    padding: 15px;
+}
+
+.email-list {
+    list-style: none;
+}
+
+.email-list li {
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.email-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.email-content {
+    color: #555;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .sidebar ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+    .email-content {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Замінюємо текст трикрапкою при звуженні */
+    }
+}
